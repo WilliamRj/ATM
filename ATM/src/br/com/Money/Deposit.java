@@ -16,7 +16,7 @@ public class Deposit extends Transaction {
 	private final static int CANCELED = 0; // constant for cancel option
 
 	/**
-	 * Deposit constructor
+	 * Depósito constructor
 	 * 
 	 * @param userAccountNumber
 	 * @param atmScreen
@@ -36,7 +36,7 @@ public class Deposit extends Transaction {
 	} // end Deposit constructor
 
 	/**
-	 * perform transaction
+	 * Transação
 	 */
 	@Override
 	public void execute() {
@@ -48,7 +48,7 @@ public class Deposit extends Transaction {
 		// check whether user entered a deposit amount or canceled
 		if (amount != CANCELED) {
 			// request deposit envelope containing specified amount
-			screen.displayMessage("\nPlease insert a deposit envelope containing ");
+			screen.displayMessage("\nInsira o valor contido no envelope ");
 			screen.displayDollarAmount(amount);
 			screen.displayMessageLine(".");
 
@@ -57,28 +57,28 @@ public class Deposit extends Transaction {
 
 			// check whether deposit envelope was received
 			if (envelopeReceived) {
-				screen.displayMessageLine("\nYour envelope has been "
-						+ "received.\nNOTE: The money just deposited will not "
-						+ "be available until we verify the amount of any "
-						+ "enclosed cash and your checks clear.");
+				screen.displayMessageLine("\nSeu envelope foi "
+						+ "entregue.\nNOTA: O dinheiro depositado não "
+						+ "estará disponível antes de verificarmos o valor do depósito "
+						+ "contido no envelope.");
 
 				// credit account to reflect the deposit
 				bankDatabase.credit(getAccountNumber(), amount);
 			} // end if
 			else // deposit envelope not received
 			{
-				screen.displayMessageLine("\nYou did not insert an "
-						+ "envelope, so the ATM has canceled your transaction.");
+				screen.displayMessageLine("\nVocê nao inseriu nenhum "
+						+ "envelope, então o ATM cancelou sua transação.");
 			} // end else
 		} // end if
 		else // user canceled instead of entering amount
 		{
-			screen.displayMessageLine("\nCanceling transaction...");
+			screen.displayMessageLine("\nCancelando transação...");
 		} // end else
 	} // end method execute
 
 	/**
-	 * prompt user to enter a deposit amount in cents
+	 * Tela para mostrar o valor a ser depositado em centavos
 	 * 
 	 * @return
 	 */
@@ -86,8 +86,8 @@ public class Deposit extends Transaction {
 		Screen screen = getScreen(); // get reference to screen
 
 		// display the prompt
-		screen.displayMessage("\nPlease enter a deposit amount in "
-				+ "CENTS (or 0 to cancel): ");
+		screen.displayMessage("\nInsira o valor a ser depositado em "
+				+ "centavos (ou 0 para cancelar): ");
 		int input = keypad.getInput(); // receive input of deposit amount
 
 		// check whether the user canceled or entered a valid amount

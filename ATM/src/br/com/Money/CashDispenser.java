@@ -1,12 +1,12 @@
 package br.com.Money;
 /**
  *  CashDispenser.java
- *  Represents Cash Dispenser
+ *  Representa simulação das Notas do Saque
  */
 public class CashDispenser 
 {
    /**
-    * the default initial number of bills in the cash dispenser
+    * Número padrão inicial de notas
     * 
     */
    private final static int INITIAL_COUNT = 500;

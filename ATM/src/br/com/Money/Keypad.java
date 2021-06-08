@@ -22,7 +22,7 @@ public class Keypad
    } // end no-argument Keypad constructor
 
    /**
-    * return an integer value entered by user 
+    * retorna valor inteiro 
     * @return nextInt
     */
    public int getInput() throws InputMismatchException

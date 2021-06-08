@@ -50,7 +50,7 @@ public class ATM
   } // end no-argument ATM constructor
 
    /**
-    *  start ATM 
+    *  Inicialização do ATM 
     */
    public void run()
    {
@@ -60,25 +60,25 @@ public class ATM
          // loop while user is not yet authenticated
          while ( !userAuthenticated ) 
          {
-            screen.displayMessageLine( "\nWelcome!" );       
+            screen.displayMessageLine( "\nBem vindo ao ATM Infnet!" );       
             authenticateUser(); // authenticate user
          } // end while
          
          performTransactions(); // user is now authenticated 
          userAuthenticated = false; // reset before next ATM session
          currentAccountNumber = 0; // reset before next ATM session 
-         screen.displayMessageLine( "\nThank you! Goodbye!" );
+         screen.displayMessageLine( "\nObrigado! Volte sempre!" );
       } // end while   
    } // end method run
 
    /**
-    *  attempts to authenticate user against database
+    *  Autenticação do Usuário pelo banco de dados
     */
    private void authenticateUser() 
    {
-      screen.displayMessage( "\nPlease enter your account number: " );
+      screen.displayMessage( "\nDigite seu número de conta: " );
       int accountNumber = keypad.getInput(); // input account number
-      screen.displayMessage( "\nEnter your PIN: " ); // prompt for PIN
+      screen.displayMessage( "\nDigite sua senha: " ); // prompt for PIN
       int pin = keypad.getInput(); // input PIN
       
       // set userAuthenticated to boolean value returned by database
@@ -92,11 +92,11 @@ public class ATM
       } // end if
       else
          screen.displayMessageLine( 
-             "Invalid account number or PIN. Please try again." );
+             "Conta ou senha inválida. Tente de novo." );
    } // end method authenticateUser
 
    /**
-    * display the main menu and perform transactions
+    * Mostra o menu principal e executa transações
     */
    private void performTransactions() 
    {
@@ -126,34 +126,34 @@ public class ATM
                currentTransaction.execute(); // execute transaction
                break; 
             case EXIT: // user chose to terminate session
-               screen.displayMessageLine( "\nExiting the system..." );
+               screen.displayMessageLine( "\nSaindo do sistema..." );
                userExited = true; // this ATM session should end
                break;
             default: // user did not enter an integer from 1-4
                screen.displayMessageLine( 
-                  "\nYou did not enter a valid selection. Try again." );
+                  "\nVocê não selecionou uma opção correta. Tente de novo." );
                break;
          } // end switch
       } // end while
    } // end method performTransactions
    
    /**
-    *  display the main menu and return an input selection
+    *  Mostra o menu principal
     * @return
     */
    private int displayMainMenu()
    {
-      screen.displayMessageLine( "\nMain menu:" );
-      screen.displayMessageLine( "1 - View my balance" );
-      screen.displayMessageLine( "2 - Withdraw cash" );
-      screen.displayMessageLine( "3 - Deposit funds" );
-      screen.displayMessageLine( "4 - Exit\n" );
-      screen.displayMessage( "Enter a choice: " );
+      screen.displayMessageLine( "\nMenu:" );
+      screen.displayMessageLine( "1 - Saldo da Conta" );
+      screen.displayMessageLine( "2 - Saque" );
+      screen.displayMessageLine( "3 - Depósito" );
+      screen.displayMessageLine( "4 - Sair\n" );
+      screen.displayMessage( "Escolha sua opção: " );
       return keypad.getInput(); // return user's selection
    } // end method displayMainMenu
          
    /**
-    *  return object of specified Transaction subclass
+    *  retorna objeto da respectiva transação
     * @param type
     * @return
     */

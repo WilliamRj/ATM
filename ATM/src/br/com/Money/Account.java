@@ -70,7 +70,10 @@ public void credit( double amount )
    totalBalance += amount; // add to total balance
 } // end method credit
 
-// debits an amount from the account
+/**
+ *  Débito para conta
+ * @param amount
+ */
 public void debit( double amount )
 {
    availableBalance -= amount; // subtract from available balance
@@ -78,7 +81,7 @@ public void debit( double amount )
 } // end method debit
 
 /**
- *  returns account number
+ *  retorna número da conta
  * @return
  */
 public int getAccountNumber()

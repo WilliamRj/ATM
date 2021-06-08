@@ -8,7 +8,7 @@ package br.com.Money;
 public class Screen
 {
 /**
- *  displays a message without a carriage return
+ *  exibir uma mensagem com um retorno
  * @param message
  */
 public void displayMessage( String message ) 
@@ -17,7 +17,7 @@ public void displayMessage( String message )
 } // end method displayMessage
 
 /**
- *  display a message with a carriage return
+ *  exibir uma mensagem com um retorno
  * @param message
  */
 public void displayMessageLine( String message ) 
@@ -26,7 +26,7 @@ public void displayMessageLine( String message )
 } // end method displayMessageLine
 
 /**
- * display a dollar amount
+ * exibe a quantia em dollar
  * @param amount
  */
 public void displayDollarAmount( double amount )

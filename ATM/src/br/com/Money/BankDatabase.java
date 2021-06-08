@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 /**
  * BankDatabase.java 
- * Represents o banco de dados do Banco 
+ * Representa o banco de dados do Banco 
  * @author Deitel
  *
  */

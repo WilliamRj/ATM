@@ -14,7 +14,7 @@ private CashDispenser cashDispenser; // reference to cash dispenser
 private final static int CANCELED = 6;
 
 /**
-Withdrawal constructor
+ * Saque constructor
  * 
  * @param userAccountNumber
  * @param atmScreen
@@ -34,7 +34,7 @@ public Withdrawal( int userAccountNumber, Screen atmScreen,
    cashDispenser = atmCashDispenser;
 } // end Withdrawal constructor
 /**
-perform transaction
+ * Transação
  * 
  */
 @Override
@@ -98,8 +98,8 @@ public void execute()
 } // end method execute
 
 /**
- * display a menu of withdrawal amounts and the option to cancel;
- * return the chosen amount or 0 if the user chooses to cancel
+ * Menu com todas as opções de saque e opção de cancelar;
+ * retorna o valor do saque ou 0 caso a opção seja cancelar
  * @return
  */
 
@@ -117,14 +117,14 @@ private int displayMenuOfAmounts()
    {
 	   
       // display the menu
-      screen.displayMessageLine( "\nWithdrawal Menu:" );
+      screen.displayMessageLine( "\nMenu de Saque:" );
       screen.displayMessageLine( "1 - $20" );
       screen.displayMessageLine( "2 - $40" );
       screen.displayMessageLine( "3 - $60" );
       screen.displayMessageLine( "4 - $100" );
       screen.displayMessageLine( "5 - $200" );
-      screen.displayMessageLine( "6 - Cancel transaction" );
-      screen.displayMessage( "\nChoose a withdrawal amount: " );
+      screen.displayMessageLine( "6 - Cancelar transação" );
+      screen.displayMessage( "\nEscolha uma opção: " );
 
       int input = keypad.getInput(); // get user input through keypad
 
@@ -143,7 +143,7 @@ private int displayMenuOfAmounts()
             break;
          default: // the user did not enter a value from 1-6
             screen.displayMessageLine( 
-               "\nInvalid selection. Try again." );
+               "\nSeleção inválida. Tente de novo." );
       } // end switch
    } // end while
 

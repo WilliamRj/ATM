@@ -10,7 +10,7 @@ package br.com.Money;
 public class BalanceInquiry extends Transaction
 {
 /**
- * BalanceInquiry constructor
+ * Construtor
  * @param userAccountNumber
  * @param atmScreen
  * @param atmBankDatabase
@@ -22,7 +22,7 @@ public BalanceInquiry( int userAccountNumber, Screen atmScreen,
 } // end BalanceInquiry constructor
 
 /**
- * performs the transaction
+ * Transação
  */
 @Override
 public void execute()
@@ -40,10 +40,10 @@ public void execute()
       bankDatabase.getTotalBalance( getAccountNumber() );
    
    // display the balance information on the screen
-   screen.displayMessageLine( "\nBalance Information:" );
-   screen.displayMessage( " - Available balance: " ); 
+   screen.displayMessageLine( "\nInformações da conta:" );
+   screen.displayMessage( " - Saldo disponível: " ); 
    screen.displayDollarAmount( availableBalance );
-   screen.displayMessage( "\n - Total balance:     " );
+   screen.displayMessage( "\n - Saldo Total:     " );
    screen.displayDollarAmount( totalBalance );
    screen.displayMessageLine( "" );
 } // end method execute
