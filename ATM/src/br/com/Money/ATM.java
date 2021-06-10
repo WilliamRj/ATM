@@ -41,7 +41,8 @@ public class ATM
      cashDispenser = new CashDispenser(); // Criar Dispensador Dinheiro
      depositSlot = new DepositSlot(); // Criar lugar para depósito
      try{
-         bankDatabase = new BankDatabase(); // criar "Base de dados"
+         //bankDatabase = new BankDatabase(); // criar "Base de dados"
+    	 bankDatabase = BankDatabase.getInstance();
      }catch (FileNotFoundException x) {
            System.err.format("FileNotFoundException: %s%n", x);
      } catch (IOException ex) {

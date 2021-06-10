@@ -23,7 +23,10 @@ private FAO arq = new FAO();
      * @throws FileNotFoundException
      * @throws IOException
      */
-public BankDatabase()throws FileNotFoundException, IOException
+
+private static BankDatabase instance = null;
+
+private BankDatabase()throws FileNotFoundException, IOException
 {
    accounts = new ArrayList<Account>(); // various accounts for testing
    try{
@@ -34,6 +37,20 @@ public BankDatabase()throws FileNotFoundException, IOException
             System.err.format("IOException: %s%n", ex);
    }
 } // end no-argument BankDatabase constructor
+
+public static BankDatabase getInstance()throws FileNotFoundException, IOException {
+	 if (instance == null){
+		 try{
+			 instance = new BankDatabase();
+		 }catch (FileNotFoundException x){
+			 System.err.format("FileNotFoundException: %s%n", x);
+		 }catch (IOException ex) {
+			 System.err.format("IOException: %s%n", ex);
+		 }
+	 
+	 }
+return instance;
+}// end method singleton (instance)
 
 // retrieve Account object containing specified account number
 private Account getAccount( int accountNumber )
