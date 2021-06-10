@@ -4,18 +4,18 @@ import java.io.FileNotFoundException;
 
 /**
  * ATMCaseStudy.java 
- * Driver program for the ATM case study
- * @author Deitel
- *
+ * Estudo de Caso do ATM pelo DEITEL
+ * @author Infnet
+ * @version Infnet
  */
 
 public class ATMCaseStudy
 {
    /**
-    * main method creates and runs the ATM
+    * Método principal para criar e rodar o ATM
     * @param args
- * @throws Exception 
- * @throws FileNotFoundException 
+    * @throws Exception 
+    * @throws FileNotFoundException 
     */
    public static void main( String[] args ) throws FileNotFoundException, Exception
    {

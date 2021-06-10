@@ -3,6 +3,8 @@ package br.com.Money;
 /**
  * Screen.java
  *Representa tela do ATM
+ * @author Infnet
+ * @version Infnet
  */
 
 public class Screen

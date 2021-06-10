@@ -4,8 +4,8 @@ package br.com.Money;
  * 
  * BalanceInquiry.java
  * Representa a consulta de saldo
- * @author Tomas
- *
+ * @author Infnet
+ * @version Infnet
  */
 public class BalanceInquiry extends Transaction
 {

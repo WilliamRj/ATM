@@ -1,16 +1,18 @@
 package br.com.Money;
 
 /**
-Transaction.java
-Abstract superclass Transaction represents an ATM transaction
-*/
+ *Transaction.java
+ *SuperClasse abstrata Transação que representa uma transação do ATM
+ * @author Infnet
+ * @version Infnet
+ */
 public abstract class Transaction
 {
 private int accountNumber; // indicates account involved
 private Screen screen; // ATM's screen
 private BankDatabase bankDatabase; // account info database
 /**
- * Transaction constructor invoked by subclasses using super()
+ * Transação constructor invocado pela subclasse usando super()
  * @param userAccountNumber
  * @param atmScreen
  * @param atmBankDatabase

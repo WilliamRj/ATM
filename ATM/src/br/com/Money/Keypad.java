@@ -6,6 +6,8 @@ import java.util.Scanner; // program uses Scanner to obtain user input
 /**
  * Keypad.java
  * Representa o teclado do ATM
+ * @author Infnet
+ * @version Infnet
  * @param Scanner input
  */
 

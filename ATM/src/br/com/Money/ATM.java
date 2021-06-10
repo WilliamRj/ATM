@@ -6,21 +6,22 @@ import java.io.IOException;
  /**
   * ATM.java 
   * Representa o ATM
-  * @author Deitel
+  * @author Infnet
+  * @version Infnet
   *
   */
 
 public class ATM 
 {
-   private boolean userAuthenticated; // whether user is authenticated
-   private int currentAccountNumber; // current user's account number
-   private Screen screen; // ATM's screen
-   private Keypad keypad; // ATM's keypad
-   private CashDispenser cashDispenser; // ATM's cash dispenser
-   private DepositSlot depositSlot; // ATM's deposit slot
-   private BankDatabase bankDatabase; // account information database
+   private boolean userAuthenticated; // Autenticação do Usuário
+   private int currentAccountNumber; // Conta do usuário do momento
+   private Screen screen; // Tela do ATM
+   private Keypad keypad; // Teclado do ATM
+   private CashDispenser cashDispenser; // Dispensador de dinheiro do ATM
+   private DepositSlot depositSlot; // Lugar para Deposito do ATM
+   private BankDatabase bankDatabase; // Banco de Dados de conta
 
-   // constants corresponding to main menu options
+   // Opcoes de Menu
    private static final int BALANCE_INQUIRY = 1;
    private static final int WITHDRAWAL = 2;
    private static final int DEPOSIT = 3;
@@ -28,19 +29,19 @@ public class ATM
 
    /**
    *  no-argument ATM constructor initializes instance variables
- * @throws Exception 
- * @throws FileNotFoundException 
+   * @throws Exception 
+   * @throws FileNotFoundException 
    */
   public ATM() throws FileNotFoundException, Exception 
   {
-     userAuthenticated = false; // user is not authenticated to start
-     currentAccountNumber = 0; // no current account number to start
-     screen = new Screen(); // create screen
-     keypad = new Keypad(); // create keypad 
-     cashDispenser = new CashDispenser(); // create cash dispenser
-     depositSlot = new DepositSlot(); // create deposit slot
+     userAuthenticated = false; // Usuário não autenticado
+     currentAccountNumber = 0; // sem conta inicial para começar
+     screen = new Screen(); // Criar tela
+     keypad = new Keypad(); // Cria teclado
+     cashDispenser = new CashDispenser(); // Criar Dispensador Dinheiro
+     depositSlot = new DepositSlot(); // Criar lugar para depósito
      try{
-         bankDatabase = new BankDatabase(); // create acct info database
+         bankDatabase = new BankDatabase(); // criar "Base de dados"
      }catch (FileNotFoundException x) {
            System.err.format("FileNotFoundException: %s%n", x);
      } catch (IOException ex) {

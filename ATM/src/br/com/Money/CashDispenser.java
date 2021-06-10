@@ -2,6 +2,8 @@ package br.com.Money;
 /**
  *  CashDispenser.java
  *  Representa simulação das Notas do Saque
+ * @author Infnet
+ * @version Infnet
  */
 public class CashDispenser 
 {
@@ -31,7 +33,7 @@ public class CashDispenser
    } // end method dispenseCash
 
    /**
-    * indicates whether cash dispenser can dispense desired amount
+    * Indicar se o ATM pode realizar o saque da quantidade requisitada
     * @param amount
     * @return
     */

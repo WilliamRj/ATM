@@ -2,10 +2,9 @@ package br.com.Money;
 
 /**
  * Deposit.java 
- * 
  * Representa o depósito
- * 
- * @author Deitel
+ * @author Infnet
+ * @version Infnet
  * 
  */
 public class Deposit extends Transaction {

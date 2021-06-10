@@ -3,14 +3,16 @@ package br.com.Money;
 /**
  * DepositSlot.java
  * Representa uma simulação de depósito
+ * @author Infnet
+ * @version Infnet
  */
 
 
 public class DepositSlot 
 {
    /**
-	 * indicates whether envelope was received (always returns true, 
-     * because this is only a software simulation of a real deposit slot)
+	 * indica quando o envelope é recebido (sempre retorna TRUE, 
+     * pois isso é apenas uma simulção de um caso REAL)
 	 * @return true
 	 */
    public boolean isEnvelopeReceived()

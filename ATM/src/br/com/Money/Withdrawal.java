@@ -1,8 +1,10 @@
 package br.com.Money;
 
 /**
-Withdrawal.java
-Representa o saque
+ * Withdrawal.java
+ * Representa o saque
+ * @author Infnet
+ * @version Infnet
 */
 public class Withdrawal extends Transaction
 {

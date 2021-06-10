@@ -6,8 +6,9 @@ import java.util.ArrayList;
 
 /**
  * BankDatabase.java 
- * Representa o banco de dados do Banco 
- * @author Deitel
+ * Representa o banco de dados do ATM 
+ * @author Infnet
+ * @version Infnet
  *
  */
 

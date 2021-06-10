@@ -3,6 +3,8 @@ package br.com.Money;
 /**
  * Account.java
  * Representa a conta do banco
+ * @author Infnet
+ * @version Infnet
  */
 
 
