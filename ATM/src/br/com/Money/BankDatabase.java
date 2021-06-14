@@ -96,11 +96,27 @@ public double getTotalBalance( int userAccountNumber )
 public void credit( int userAccountNumber, double amount )
 {
    getAccount( userAccountNumber ).credit( amount );
+   
+   try{
+	   arq.writeFile(userAccountNumber, amount, "credito");
+   }catch (FileNotFoundException x) {
+    System.err.format("FileNotFoundException: %s%n", x);
+   } catch (IOException ex) {
+    System.err.format("IOException: %s%n", ex);
+   }
 } // end method credit
 
 // debit an amount from Account with specified account number
 public void debit( int userAccountNumber, double amount )
 {
    getAccount( userAccountNumber ).debit( amount );
+   
+   try{
+	   arq.writeFile(userAccountNumber, amount, "debito");
+   }catch (FileNotFoundException x) {
+    System.err.format("FileNotFoundException: %s%n", x);
+   } catch (IOException ex) {
+    System.err.format("IOException: %s%n", ex);
+   }
 } // end method debit
 } // end class BankDatabase

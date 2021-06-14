@@ -3,6 +3,8 @@ package br.com.Money;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.FileReader;
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
@@ -49,6 +51,46 @@ public class FAO {
          "PIN", "Saldo", "Saldo Total" );
         for (Account conta : contas) {
             conta.toString();
+        }
+    }
+    
+    public void writeFile(int numeroConta, double valor, String credDeb) throws FileNotFoundException, IOException {
+        
+    	
+    	try {
+    		BufferedReader reader = new BufferedReader(new FileReader("Accounts.txt"));
+            String line;
+            StringBuffer inputBuffer = new StringBuffer();
+            String linha[] = new String[4];
+            while ((line = reader.readLine()) != null) {
+                linha = line.split(",");
+                int accountNumber = Integer.parseInt(linha[0]);
+                int pin = Integer.parseInt(linha[1]);
+                double availableBalance = Double.parseDouble(linha[2]);
+                double totalBalance = Double.parseDouble(linha[3]);
+                
+                if (numeroConta == accountNumber) {
+	                if (credDeb == "credito") {
+	                	//availableBalance = availableBalance + valor;
+	                	totalBalance = totalBalance + valor;
+	                } else if (credDeb == "debito") {
+	                	availableBalance = availableBalance - valor;
+	                	totalBalance = totalBalance - valor;
+	                }
+                } 
+	                inputBuffer.append(accountNumber +","+ pin +","+ availableBalance +","+ totalBalance);
+	                inputBuffer.append('\n');     
+	        }
+            reader.close();            
+            String inputStr = inputBuffer.toString();
+            // write the new string with the replaced line OVER the same file
+            FileOutputStream fileOut = new FileOutputStream("Accounts.txt");
+            fileOut.write(inputStr.getBytes());
+            fileOut.close();
+        } catch (FileNotFoundException x) {
+            System.err.format("FileNotFoundException: %s%n", x);
+        } catch (IOException ex) {
+            System.err.format("IOException: %s%n", ex);
         }
     }
 }
